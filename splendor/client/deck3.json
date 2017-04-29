@@ -1,0 +1,121 @@
+[{
+    "cost": [3, 0, 0, 7, 0]
+    , "points": 5
+    , "gemColor": 0
+    , "deck": 3
+    , "id": 300
+}, {
+    "cost": [0, 0, 0, 7, 0]
+    , "points": 4
+    , "gemColor": 0
+    , "deck": 3
+    , "id": 301
+}, {
+    "cost": [3, 3, 0, 6, 0]
+    , "points": 4
+    , "gemColor": 0
+    , "deck": 3
+    , "id": 302
+}, {
+    "cost": [0, 5, 3, 3, 3]
+    , "points": 3
+    , "gemColor": 0
+    , "deck": 3
+    , "id": 303
+}, {
+    "cost": [0, 3, 0, 0, 7]
+    , "points": 5
+    , "gemColor": 1
+    , "deck": 3
+    , "id": 304
+}, {
+    "cost": [0, 0, 0, 0, 7]
+    , "points": 4
+    , "gemColor": 1
+    , "deck": 3
+    , "id": 305
+}, {
+    "cost": [0, 3, 3, 0, 6]
+    , "points": 4
+    , "gemColor": 1
+    , "deck": 3
+    , "id": 306
+}, {
+    "cost": [3, 0, 5, 3, 3]
+    , "points": 3
+    , "gemColor": 1
+    , "deck": 3
+    , "id": 307
+}, {
+    "cost": [7, 0, 3, 0, 0]
+    , "points": 5
+    , "gemColor": 2
+    , "deck": 3
+    , "id": 308
+}, {
+    "cost": [7, 0, 0, 0, 0]
+    , "points": 4
+    , "gemColor": 2
+    , "deck": 3
+    , "id": 309
+}, {
+    "cost": [6, 0, 3, 3, 0]
+    , "points": 4
+    , "gemColor": 2
+    , "deck": 3
+    , "id": 310
+}, {
+    "cost": [3, 3, 0, 5, 3]
+    , "points": 3
+    , "gemColor": 2
+    , "deck": 3
+    , "id": 311
+}, {
+    "cost": [0, 7, 0, 3, 0]
+    , "points": 5
+    , "gemColor": 3
+    , "deck": 3
+    , "id": 312
+}, {
+    "cost": [0, 7, 0, 0, 0]
+    , "points": 4
+    , "gemColor": 3
+    , "deck": 3
+    , "id": 313
+}, {
+    "cost": [0, 6, 0, 3, 3]
+    , "points": 4
+    , "gemColor": 3
+    , "deck": 3
+    , "id": 314
+}, {
+    "cost": [3, 3, 3, 0, 5]
+    , "points": 3
+    , "gemColor": 3
+    , "deck": 3
+    , "id": 315
+}, {
+    "cost": [0, 0, 7, 0, 3]
+    , "points": 5
+    , "gemColor": 4
+    , "deck": 3
+    , "id": 316
+}, {
+    "cost": [0, 0, 7, 0, 0]
+    , "points": 4
+    , "gemColor": 4
+    , "deck": 3
+    , "id": 317
+}, {
+    "cost": [3, 0, 6, 0, 3]
+    , "points": 4
+    , "gemColor": 4
+    , "deck": 3
+    , "id": 318
+}, {
+    "cost": [5, 3, 3, 3, 0]
+    , "points": 3
+    , "gemColor": 4
+    , "deck": 3
+    , "id": 319
+}]

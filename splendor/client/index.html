@@ -1,0 +1,71 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="splendor.css">
+    <link rel="stylesheet" type="text/css" href="card.css">
+    <link rel="stylesheet" type="text/css" href="lobby.css">
+</head>
+
+<body>
+    <form id="signDiv">
+        <label>Username:</label>
+        <input type="text" name="username">
+        <input type="submit" value="Signin"> 
+    </form>
+    <form id="startGameButton" style="display: none">
+        <label>Join Game</label>
+        <input type="text" id="joinGameName" name="joinGameName">
+        <button onclick="joinGame()">Join</button>
+    </form>
+    <main>
+        <player id="player1"></player>
+        <player id="player2"></player>
+        <player id="player3"></player>
+        <player id="player4"></player>
+        <tabletop>
+            <div>
+                <deck></deck>
+                <playArea>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </playArea>
+                <tokens>
+                    <div><img src="./images/red.png">
+                        <p>0</p>
+                    </div>
+                    <div><img src="./images/blue.png">
+                        <p>0</p>
+                    </div>
+                    <div><img src="./images/brown.png">
+                        <p>0</p>
+                    </div>
+                    <div><img src="./images/green.png">
+                        <p>0</p>
+                    </div>
+                    <div><img src="./images/white.png">
+                        <p>0</p>
+                    </div>
+                    <!--<div><img src="./images/yellow.png"><p>0</p></div>-->
+                </tokens>
+            </div>
+        </tabletop>
+    </main>
+</body>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src=splendor.js></script>
+<!--<script src="SplendorServerCode.js"></script>-->
+<script src="splendorSocketIO.js"></script>

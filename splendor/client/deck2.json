@@ -1,0 +1,181 @@
+ [{
+    "cost": [6, 0, 0, 0, 0]
+    , "points": 3
+    , "gemColor": 0
+    , "deck": 2
+    , "id": 200
+}, {
+    "cost": [0, 0, 5, 0, 3]
+    , "points": 2
+    , "gemColor": 0
+    , "deck": 2
+    , "id": 201
+}, {
+    "cost": [0, 4, 0, 2, 1]
+    , "points": 2
+    , "gemColor": 0
+    , "deck": 2
+    , "id": 202
+}, {
+    "cost": [0, 0, 5, 0, 0]
+    , "points": 2
+    , "gemColor": 0
+    , "deck": 2
+    , "id": 203
+}, {
+    "cost": [2, 0, 3, 0, 2]
+    , "points": 1
+    , "gemColor": 0
+    , "deck": 2
+    , "id": 204
+}, {
+    "cost": [2, 3, 3, 0, 0]
+    , "points": 1
+    , "gemColor": 0
+    , "deck": 2
+    , "id": 205
+}, {
+    "cost": [0, 6, 0, 0, 0]
+    , "points": 3
+    , "gemColor": 1
+    , "deck": 2
+    , "id": 206
+}, {
+    "cost": [0, 3, 0, 0, 5]
+    , "points": 2
+    , "gemColor": 1
+    , "deck": 2
+    , "id": 207
+}, {
+    "cost": [1, 0, 4, 0, 2]
+    , "points": 2
+    , "gemColor": 1
+    , "deck": 2
+    , "id": 208
+}, {
+    "cost": [0, 5, 0, 0, 0]
+    , "points": 2
+    , "gemColor": 1
+    , "deck": 2
+    , "id": 209
+}, {
+    "cost": [0, 2, 3, 3, 0]
+    , "points": 1
+    , "gemColor": 1
+    , "deck": 2
+    , "id": 210
+}, {
+    "cost": [3, 2, 0, 2, 0]
+    , "points": 1
+    , "gemColor": 1
+    , "deck": 2
+    , "id": 211
+}, {
+    "cost": [0, 0, 6, 0, 0]
+    , "points": 3
+    , "gemColor": 2
+    , "deck": 2
+    , "id": 212
+}, {
+    "cost": [0, 0, 0, 0, 5]
+    , "points": 2
+    , "gemColor": 2
+    , "deck": 2
+    , "id": 213
+}, {
+    "cost": [3, 0, 0, 5, 0]
+    , "points": 2
+    , "gemColor": 2
+    , "deck": 2
+    , "id": 214
+}, {
+    "cost": [2, 1, 0, 4, 0]
+    , "points": 2
+    , "gemColor": 2
+    , "deck": 2
+    , "id": 215
+}, {
+    "cost": [0, 0, 2, 3, 3]
+    , "points": 1
+    , "gemColor": 2
+    , "deck": 2
+    , "id": 216
+}, {
+    "cost": [0, 2, 0, 2, 3]
+    , "points": 1
+    , "gemColor": 2
+    , "deck": 2
+    , "id": 217
+}, {
+    "cost": [0, 0, 0, 6, 0]
+    , "points": 3
+    , "gemColor": 3
+    , "deck": 2
+    , "id": 218
+}, {
+    "cost": [0, 2, 1, 0, 4]
+    , "points": 2
+    , "gemColor": 3
+    , "deck": 2
+    , "id": 219
+}, {
+    "cost": [0, 0, 0, 5, 0]
+    , "points": 2
+    , "gemColor": 3
+    , "deck": 2
+    , "id": 220
+}, {
+    "cost": [0, 5, 0, 3, 0]
+    , "points": 2
+    , "gemColor": 3
+    , "deck": 2
+    , "id": 221
+}, {
+    "cost": [3, 0, 0, 2, 3]
+    , "points": 1
+    , "gemColor": 3
+    , "deck": 2
+    , "id": 222
+}, {
+    "cost": [0, 3, 2, 0, 2]
+    , "points": 1
+    , "gemColor": 3
+    , "deck": 2
+    , "id": 223
+}, {
+    "cost": [0, 0, 0, 0, 6]
+    , "points": 3
+    , "gemColor": 4
+    , "deck": 2
+    , "id": 224
+}, {
+    "cost": [4, 0, 2, 1, 0]
+    , "points": 2
+    , "gemColor": 4
+    , "deck": 2
+    , "id": 225
+}, {
+    "cost": [5, 0, 3, 0, 0]
+    , "points": 2
+    , "gemColor": 4
+    , "deck": 2
+    , "id": 226
+}, {
+    "cost": [5, 0, 0, 0, 0]
+    , "points": 2
+    , "gemColor": 4
+    , "deck": 2
+    , "id": 227
+}, {
+    "cost": [3, 3, 0, 0, 2]
+    , "points": 1
+    , "gemColor": 4
+    , "deck": 2
+    , "id": 228
+}, {
+    "cost": [2, 0, 2, 3, 0]
+    , "points": 1
+    , "gemColor": 4
+    , "deck": 2
+    , "id": 229
+}]

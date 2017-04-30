@@ -16,6 +16,8 @@ socket.on('signInResponse', function () {
 });
 
 socket.on('gameData', function (game) {
+    // ************************ TOKENS ***************************
+    createTokens();
     // ******************** CARDS IN PLAY ************************
     for (var i in game.inPlay) {
         console.log("Loop :" + i);

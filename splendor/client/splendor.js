@@ -4,7 +4,7 @@
 ///////////////////
 //                  0       1       2           3           4           5
 var colorName = [   "red",  "blue", "brown",    "green",    "white",    "purple"];
-// colorname[2] returns "Brown"
+// colorname[2] returns "brown"
 
 
 
@@ -23,17 +23,34 @@ var getEmptyCardSlot = function (deckDiv) {
     }
 };
 
-var tokenCount = [];
-var tokenDiv = document.querySelectorAll("tokens > div");
-for (var i = 0;i < 5; i++){
-    tokenCount[i] = tokenDiv[i].getElementsByTagName('p')[0];
-    tokenDiv[i].onclick = function(){
-        for (var j = 0; j < 5; j++) {
-            if (this.children[0].currentSrc == tokenDiv[j].children[0].currentSrc) {
-                socket.emit('tokenClicked', j);
+function createTokens() {
+    var tokensMainDiv = document.getElementsByTagName('tokens')[0];
+    for (var i = 0; i < 5; ++i) {
+        var tokenDiv = document.createElement('div');
+        var tokenQtyDiv = document.createElement('p');
+        tokenQtyDiv.innerHTML = '0';
+        tokensMainDiv.appendChild(tokenDiv);
+        var colorImg = img_create("./images/" + colorName[i] + ".png");
+        tokenDiv.appendChild(colorImg);
+        tokenDiv.appendChild(tokenQtyDiv);
+        tokensMainDiv.appendChild(tokenDiv);
+    }
+    initTokenDivs();
+}
+
+function initTokenDivs() {
+    var tokenCount = [];
+    var tokenDiv = document.querySelectorAll("tokens > div");
+    for (var i = 0;i < 5; i++){
+        tokenCount[i] = tokenDiv[i].getElementsByTagName('p')[0];
+        tokenDiv[i].onclick = function(){
+            for (var j = 0; j < 5; j++) {
+                if (this.children[0].currentSrc == tokenDiv[j].children[0].currentSrc) {
+                    socket.emit('tokenClicked', j);
+                }
             }
-        }
-    };
+        };
+    }
 }
 
 function createCard(card, div){

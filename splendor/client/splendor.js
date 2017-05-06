@@ -5,7 +5,7 @@
 //                  0       1       2           3           4           5
 var colorName = [   "red",  "blue", "brown",    "green",    "white",    "purple"];
 // colorname[2] returns "brown"
-
+var tokenCount = [];
 
 
 function joinGame () {
@@ -39,11 +39,10 @@ function createTokens() {
 }
 
 function initTokenDivs() {
-    var tokenCount = [];
-    var tokenDiv = document.querySelectorAll("tokens > div");
+    var tokenDivs = document.querySelectorAll("tokens > div");
     for (var i = 0;i < 5; i++){
-        tokenCount[i] = tokenDiv[i].getElementsByTagName('p')[0];
-        tokenDiv[i].onclick = function(){
+        tokenCount[i] = tokenDivs[i].getElementsByTagName('p')[0];
+        tokenDivs[i].onclick = function(){
             for (var j = 0; j < 5; j++) {
                 if (this.children[0].currentSrc == tokenDiv[j].children[0].currentSrc) {
                     socket.emit('tokenClicked', j);
@@ -51,6 +50,7 @@ function initTokenDivs() {
             }
         };
     }
+
 }
 
 function createCard(card, div){

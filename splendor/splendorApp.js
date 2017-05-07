@@ -37,27 +37,29 @@ var createGame = function (socket, gameName) {
     for (playerSocket in LOBBY[gameName]){
         GAMES[gameName].socketList.push(playerSocket.id);
     }
-   socket.game = GAMES[gameName];
-   createPlayer(socket);
+   // socket.game = GAMES[gameName];
+   // createPlayer(socket);
    for (var others in LOBBY[gameName]) {
+       LOBBY[gameName][others].game = GAMES[gameName];
+       createPlayer(LOBBY[gameName][others]);
        LOBBY[gameName][others].emit('gameData', GAMES[gameName]);
    }
 };
 
 var clickCard = function (game, socket, card) {
     if(game.playerList[socket.id].isActivePlayer) {
-        socket.emit('cLog', "You clicked on card" + card.id);
+        // socket.emit('cLog', "You clicked on card" + card.id);
         if(game.playerList[socket.id].canAfford(card)) {
             game.buyCard(game.playerList[socket.id], card.id);
             for (var token in card.cost) {
                 updateTokens(game, token);
             }
             updateCards(game, card.id, game.inPlay.slice(-1)[0]);
-            console.log("Player: " + game.playerList[socket.id].name);
-            console.log("   Points: " + game.playerList[socket.id].points);
-            for( var i = 0; i < 5; ++i) {
-                console.log("   Cards " + colorName[i] + ": " + game.playerList[socket.id].gems[i][1]);
-            }
+            // console.log("Player: " + game.playerList[socket.id].name);
+            // console.log("   Points: " + game.playerList[socket.id].points);
+            // for( var i = 0; i < 5; ++i) {
+            //     console.log("   Cards " + colorName[i] + ": " + game.playerList[socket.id].gems[i][1]);
+            // }
         }
         else { socket.emit('cLog', "Can't afford card"); }
     } else { socket.emit('cLog', "Not Active Player") }
@@ -75,10 +77,10 @@ var clickToken = function (game, socketID, tokenColor) {
     game.removeTokens(tokenColor, 1);
     game.playerList[socketID].addTokens(tokenColor, 1);
     updateTokens(game, tokenColor);
-    console.log('Player: ' + game.playerList[socketID].name);
-    for (var gem in game.playerList[socketID].gems) {
-        console.log('   ' + colorName[gem] + ': ' + game.playerList[socketID].gems[gem][0]);
-    }
+    // console.log('Player: ' + game.playerList[socketID].name);
+    // for (var gem in game.playerList[socketID].gems) {
+    //     console.log('   ' + colorName[gem] + ': ' + game.playerList[socketID].gems[gem][0]);
+    // }
 };
 
 var updateTokens = function (game, tokenColor) {
@@ -94,14 +96,9 @@ var joinLobby = function (socket, gameName) {
         LOBBY[gameName] = [];
     }
     LOBBY[gameName][socket.id] = socket;
-    console.log('enterLobby');
     socket.emit('startGameReceived');
     socket.lobbyName = gameName;
-
-    for ( var client in LOBBY[gameName]) {
-        console.log('lobby ' + gameName + ' Names: '  + LOBBY[gameName][client].name);
-    }
-        lobyUpdate(gameName); //send playernames to client.
+    lobyUpdate(gameName); //send playernames to client.
 };
 
 var leaveLobby = function (socket, gameName) {

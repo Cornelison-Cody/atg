@@ -16,16 +16,16 @@ socket.on('signInResponse', function () {
 });
 
 socket.on('gameData', function (game) {
+    // ******************** REMOVE LOBBY *************************
+    var lobbyDivDiv = document.getElementsByTagName("lobbyDiv")[0];
+    lobbyDivDiv.parentElement.removeChild(lobbyDivDiv);
     // ************************ TOKENS ***************************
     createTokens();
     // ******************** CARDS IN PLAY ************************
     for (var i in game.inPlay) {
-        console.log("Loop :" + i);
-        console.log(game.inPlay[i]);
         createCard(game.inPlay[i], document.querySelector("playArea").children[game.inPlay[i].deck - 1].children[i % 4]);
     }
     // ******************PLAYER NAMES ****************************
-//    createPlayer(game.playerList[this.socket.id], 0);
     var index = 1;
     for (var playerObj in game.playerList) {
         if (game.playerList[playerObj] != null) {
@@ -43,7 +43,6 @@ socket.on('gameData', function (game) {
     for (var tokenPile in game.token) {
         tokenCount[tokenPile].innerHTML = game.token[tokenPile];
     }
-//    updatePlayers();
 });
 
 socket.on('cLog' , function (myString) {
@@ -69,9 +68,5 @@ socket.on('updateToken', function (color, count) {
 });
 
 socket.on('lobbyUpdate', function (playersArray){
-    console.log("lobby Players: ");
-    for (var playerName in playersArray) {
-        console.log(playersArray[playerName]);
-    }
     updateLobby(playersArray);
 });

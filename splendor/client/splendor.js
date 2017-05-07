@@ -7,7 +7,6 @@ var colorName = [   "red",  "blue", "brown",    "green",    "white",    "purple"
 // colorname[2] returns "brown"
 var tokenCount = [];
 
-
 function joinGame () {
     event.preventDefault();
     var gameName = document.getElementById("joinGameName").value;
@@ -44,7 +43,7 @@ function initTokenDivs() {
         tokenCount[i] = tokenDivs[i].getElementsByTagName('p')[0];
         tokenDivs[i].onclick = function(){
             for (var j = 0; j < 5; j++) {
-                if (this.children[0].currentSrc == tokenDiv[j].children[0].currentSrc) {
+                if (this.children[0].currentSrc == tokenDivs[j].children[0].currentSrc) {
                     socket.emit('tokenClicked', j);
                 }
             }
@@ -119,13 +118,13 @@ function createCard(card, div){
             var costColorDiv = document.createElement(colorName[colors]);
             var colorIcon = document.createElement("div");
             var colorImg = img_create("./images/" + colorName[colors] + ".png");
-            colorIcon.appendChild(colorImg)
-            costColorDiv.appendChild(colorIcon)
-            var costNumDivInner = document.createElement("div")
-            var costNumDivOuter = document.createElement("div")
-            costNumDivInner.innerHTML = card.cost[colors]
-            costNumDivOuter.appendChild(costNumDivInner)
-            costColorDiv.appendChild(costNumDivOuter)
+            colorIcon.appendChild(colorImg);
+            costColorDiv.appendChild(colorIcon);
+            var costNumDivInner = document.createElement("div");
+            var costNumDivOuter = document.createElement("div");
+            costNumDivInner.innerHTML = card.cost[colors];
+            costNumDivOuter.appendChild(costNumDivInner);
+            costColorDiv.appendChild(costNumDivOuter);
             cost.appendChild(costColorDiv);
         }
 //        for (var i=0;i < card.cost[colors];i++){
@@ -163,21 +162,18 @@ function createCard(card, div){
 function createPlayer(player, playerNum ) {
     var nameDiv = document.createElement("name");
     nameDiv.innerHTML = player.name;
-    console.log(playerNum)
-    console.log(document.querySelectorAll("main player"))
-    console.log(document.querySelectorAll("main>player"))
     var playerDiv = document.querySelectorAll("main player")[playerNum];
     var pointsDiv = document.createElement("points");
     var gemsDiv = document.createElement("gems");
     for (color in player.gems){
         var gemDiv = document.createElement("div");
         var gemToken = document.createElement("p");
-        gemToken.innerHTML = color[0];
+        gemToken.innerHTML = player.gems[color][0];
         var gemCard = document.createElement("p");
-        gemCard.innerHTML = color[1];
+        gemCard.innerHTML = player.gems[color][1];
         gemDiv.appendChild(gemToken);
         gemDiv.appendChild(gemCard);
-        gemsDiv.appendChild(gemDiv)
+        gemsDiv.appendChild(gemDiv);
         playerDiv.appendChild(gemsDiv);
     }
     pointsDiv.innerHTML = player.points;
@@ -185,9 +181,9 @@ function createPlayer(player, playerNum ) {
     playerDiv.appendChild(pointsDiv)
 }
 
-function updatePlayers() {
-    socket.emit('updatePlayers');
-}
+// function updatePlayers(player) {
+//     socket.emit('updatePlayers', player);
+// }
 
 function updateLobby(playersArray) {
     var lobbyDiv = document.getElementsByTagName("lobby")[0];
@@ -202,7 +198,7 @@ function updateLobby(playersArray) {
         startGameButton.onclick = function(){
             socket.emit('startGame', window.gameName);
             //Delete Lobby/////
-            lobbyDivDiv.parentElement.removeChild(lobbyDivDiv)
+            // lobbyDivDiv.parentElement.removeChild(lobbyDivDiv)
             
         };
         
@@ -223,7 +219,6 @@ function updateLobby(playersArray) {
         var playerName = document.createElement('p');
         var playerNameDiv = document.createElement('div');
         playerName.innerHTML = playersArray[player];
-        console.log(playersArray[player])
         playerNameDiv.appendChild(playerName);
         players.appendChild(playerNameDiv)
     }

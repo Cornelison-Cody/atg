@@ -1,6 +1,9 @@
 function createPlayers(data) {
-        for (player in data.players) {
-            GAME_DATA.players.push(new Player(data.players[player]));
+        for (player in data.playerList) {
+            if (typeof(data.playerList[player]) === "undefined" || data.playerList[player] == null){
+                continue;
+            }
+            window.LOCAL_GAME_DATA.players.push(new Player(data.playerList[player]));
         }
     }
     //Class
@@ -30,6 +33,10 @@ function createPlayers(data) {
         }
         this.addGem = function (gemNumber, tokenCard, amountToAdd) {
             this.gems[gemNumber][tokenCard] += amountToAdd
+            this.div.children[gemNumber].children[tokenCard].innerHTML = this.gems[gemNumber][tokenCard];
+        }
+        this.setGem = function (gemNumber, tokenCard, newValue) {
+            this.gems[gemNumber][tokenCard] = newValue
             this.div.children[gemNumber].children[tokenCard].innerHTML = this.gems[gemNumber][tokenCard];
         }
     }

@@ -43,6 +43,8 @@ var createGame = function (socket, gameName) {
        LOBBY[gameName][others].game = GAMES[gameName];
        createPlayer(LOBBY[gameName][others]);
        LOBBY[gameName][others].emit('gameData', GAMES[gameName]);
+       console.log("Start Game:")
+       console.log(GAMES[gameName])
    }
 };
 

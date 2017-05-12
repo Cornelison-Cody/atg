@@ -26,19 +26,7 @@ socket.on('gameData', function (game) {
         createCard(game.inPlay[i], document.querySelector("playArea").children[game.inPlay[i].deck - 1].children[i % 4]);
     }
     // ******************PLAYER NAMES ****************************
-    var index = 1;
-    for (var playerObj in game.playerList) {
-        if (game.playerList[playerObj] != null) {
-            if (playerObj.name != signDivUsername[0].value) {
-                if (index < 4) {
-                    createPlayer(game.playerList[playerObj], index++)
-                }
-            }
-            else {
-                createPlayer(game.playerList[playerObj], 0)
-            }
-        }
-    }
+    createPlayers(game)
     // ******************** TOKENS IN PILE ************************
     for (var tokenPile in game.token) {
         tokenCount[tokenPile].innerHTML = game.token[tokenPile];

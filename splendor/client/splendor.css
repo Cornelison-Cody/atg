@@ -1,11 +1,3 @@
-/*Temoporary fix for player div*/
-player{
-    position: absolute;
-    left: 0;
-}
-/*Just Temmporary*/
-
-
 *{
     min-width: 10px;
     min-height: 10px;

@@ -31,20 +31,21 @@ var createPlayer = function (socket) {
 };
 
 var createGame = function (socket, gameName) {
+    console.log("Lobby GameName " + LOBBY[gameName] );
     if (typeof(GAMES[gameName]) == "undefined"){
         GAMES[gameName] = new gameClass.game(gameName);
     }
     for (playerSocket in LOBBY[gameName]){
         GAMES[gameName].socketList.push(playerSocket.id);
+        LOBBY[gameName][playerSocket].game = GAMES[gameName];
+        createPlayer(LOBBY[gameName][playerSocket]);
     }
    // socket.game = GAMES[gameName];
    // createPlayer(socket);
-   for (var others in LOBBY[gameName]) {
-       LOBBY[gameName][others].game = GAMES[gameName];
-       createPlayer(LOBBY[gameName][others]);
-       LOBBY[gameName][others].emit('gameData', GAMES[gameName]);
+   for (var sockets in LOBBY[gameName]) {
+       LOBBY[gameName][sockets].emit('gameData', GAMES[gameName]);
        console.log("Start Game:")
-       console.log(GAMES[gameName])
+       // console.log(GAMES[gameName])
    }
 };
 

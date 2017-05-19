@@ -116,7 +116,7 @@ function player(name){
     this.name = name;
     this.points = 0;
     this.isActivePlayer = true;
-    this.gems = [ [0, 0], [0, 0], [0, 0], [0, 0],[0, 0] ];
+    this.gems = [ [0, 0], [0, 0], [0, 0], [0, 0],[0, 0] ];  // [gems][cards]  gems.[color][gem/card]
     this.card = [];
     
     //Public functions

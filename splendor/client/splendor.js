@@ -216,6 +216,24 @@ function updateLobby(playersArray) {
         players.appendChild(playerNameDiv)
     }
 }
+
+function updateTokens(color, count, pName, pGems) {
+    tokenCount[color].innerHTML = count;
+    for (var player in window.LOCAL_GAME_DATA.players) {
+        if (window.LOCAL_GAME_DATA.players[player].name == pName) {
+            window.LOCAL_GAME_DATA.players[player].setGem(color + 1, 0, pGems);  // ********** BUG HERE WITH THE +1 ******
+        }
+    }
+}
+
+function updateCards (pName, pCards, cColor) {
+    for (var player in window.LOCAL_GAME_DATA.players) {
+        if (window.LOCAL_GAME_DATA.players[player].name == pName) {
+            window.LOCAL_GAME_DATA.players[player].setGem(cColor, 1, pCards); // ********** BUG HERE WITH THE COLOR ***
+        }
+    }
+}
+
 ///////////////////////
 //  Old functions
 ///////////////////////

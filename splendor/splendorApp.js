@@ -2,7 +2,7 @@
 var gameClass = require('./gameClasses.js');
 
 // SERVER SETUP
-var port = 2644
+var port = 2644;
 var express = require('express');
 var app = express();
 var serv = require('http').Server(app);
@@ -50,14 +50,17 @@ var createGame = function (socket, gameName) {
 };
 
 var clickCard = function (game, socket, card) {
+
+    // *********** WANT TO SEE IF WE CAN REMOVE GAME FROM UPDATECARDS FUNCTION **************
+
     if(game.playerList[socket.id].isActivePlayer) {
         // socket.emit('cLog', "You clicked on card" + card.id);
         if(game.playerList[socket.id].canAfford(card)) {
             game.buyCard(game.playerList[socket.id], card.id);
             for (var token in card.cost) {
-                updateTokens(game, token);
+                updateTokens(game, token, game.playerList[socket.id].name, game.playerList[socket.id].gems[token][0]);
             }
-            updateCards(game, card.id, game.inPlay.slice(-1)[0]);
+            updateCards(game, card.id, game.inPlay.slice(-1)[0], game.playerList[socket.id].name, game.playerList[socket.id].gems[card.gemColor][1], card.gemColor);
             // console.log("Player: " + game.playerList[socket.id].name);
             // console.log("   Points: " + game.playerList[socket.id].points);
             // for( var i = 0; i < 5; ++i) {
@@ -68,10 +71,14 @@ var clickCard = function (game, socket, card) {
     } else { socket.emit('cLog', "Not Active Player") }
 };
 
-var updateCards = function (game, oldCard, newCard) {
+var updateCards = function (game, oldCard, newCard, pName, pCards, cColor) {
+
+    // ***************** THINK THERE MIGHT BE A BUG IN HERE. LOOKS LIKE IT SENDS THE CARD TO ALL PLAYERS NOT JUST
+    // ******************************** PLAYERS IN THE GAME ***************************************************
+
     for (var i in SOCKET_LIST) {
         var socket = SOCKET_LIST[i];
-        socket.emit('removeCard', oldCard);
+        socket.emit('removeCard', oldCard, pName, pCards, cColor);
         socket.emit('createCard', newCard);
     }
 };
@@ -79,17 +86,20 @@ var updateCards = function (game, oldCard, newCard) {
 var clickToken = function (game, socketID, tokenColor) {
     game.removeTokens(tokenColor, 1);
     game.playerList[socketID].addTokens(tokenColor, 1);
-    updateTokens(game, tokenColor);
+    updateTokens(game, tokenColor, game.playerList[socketID].name, game.playerList[socketID].gems[tokenColor][0]);
     // console.log('Player: ' + game.playerList[socketID].name);
     // for (var gem in game.playerList[socketID].gems) {
     //     console.log('   ' + colorName[gem] + ': ' + game.playerList[socketID].gems[gem][0]);
     // }
 };
 
-var updateTokens = function (game, tokenColor) {
+var updateTokens = function (game, tokenColor, pName, pGems) {
+
+    // *********************** MIGHT BE AN ERROR HERE AS WELL SENDING DATA TO ALL PLAYERS ***********************
+
     for (var i in SOCKET_LIST) {
         var socket = SOCKET_LIST[i];
-        socket.emit('updateToken', tokenColor, game.token[tokenColor]);
+        socket.emit('updateToken', tokenColor, game.token[tokenColor], pName, pGems);
     }
 };
 ///////////////////
@@ -165,6 +175,9 @@ io.sockets.on('connection', function (socket) {
        joinLobby(socket, gameName);
     });
 
+    socket.on('sLog', function (string) {
+        console.log(string);
+    });
     <!-- All scripts need to go in here with the socket.on or socket.emit -->
 
 });

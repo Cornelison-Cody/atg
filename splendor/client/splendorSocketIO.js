@@ -26,7 +26,7 @@ socket.on('gameData', function (game) {
         createCard(game.inPlay[i], document.querySelector("playArea").children[game.inPlay[i].deck - 1].children[i % 4]);
     }
     // ******************PLAYER NAMES ****************************
-    createPlayers(game)
+    createPlayers(game);
     // ******************** TOKENS IN PILE ************************
     for (var tokenPile in game.token) {
         tokenCount[tokenPile].innerHTML = game.token[tokenPile];
@@ -37,9 +37,10 @@ socket.on('cLog' , function (myString) {
     console.log(myString);
 });
 
-socket.on('removeCard', function (cardID) {
+socket.on('removeCard', function (cardID, pName, pCards, cColor) {
     var oldCard = document.getElementById(cardID + "CardID");
     oldCard.parentNode.removeChild(oldCard);
+    updateCards (pName, pCards, cColor);        // ********** SHOULD ALL ALL CARD UPDATE FUNCTIONS IN HERE **********
 });
 
 socket.on('createCard', function (card) {
@@ -51,8 +52,9 @@ socket.on('startGameReceived', function () {
     startGameDiv.style.display = 'none';
 });
 
-socket.on('updateToken', function (color, count) {
-    tokenCount[color].innerHTML = count;
+socket.on('updateToken', function (color, count, pName, pGems) {
+    // tokenCount[color].innerHTML = count;
+    updateTokens(color, count, pName, pGems);
 });
 
 socket.on('lobbyUpdate', function (playersArray){

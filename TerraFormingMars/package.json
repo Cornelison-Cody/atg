@@ -1,0 +1,23 @@
+{
+  "name": "TerraFromingMars",
+  "version": "1.0.0",
+  "description": "TerraFroming Mars Web App",
+  "main": "TerraFormingMarsApp.js",
+  "scripts": {
+    "start": "node ./TerraFormingMarsApp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cornelco/node.js-splendor.git"
+  },
+  "author": "Cody Cornelison, Cody Nichols",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cornelco/node.js-splendor/issues"
+  },
+  "homepage": "https://github.com/cornelco/node.js-splendor#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  }
+}

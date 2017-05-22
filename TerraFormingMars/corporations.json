@@ -1,0 +1,148 @@
+[{"Name": "Teractor"
+,"resources": {
+        "money": 60
+    }
+, "effects": {
+        "discounts": {
+            "earthTags": 3
+        }
+    }
+, "tags": {
+        "earth": 1
+    }
+, "flavorText": "Influence enough to control entire nations, and an army of lawyers and businessmen, has taken Teractor all the way to the top. And now the sky is calling. The strongest corporation on Earth wants to dominate space too..."
+, "id": 100
+}
+, {"Name": "CrediCor"
+,"resources": {
+        "money": 57
+    }
+, "effects": {
+        "conditional": {
+            "if": "cardCost > 20"
+            , "than": "money + 4"
+        }
+    }
+, "tags": {    }
+, "flavorText": "Multibillionaire Bard Hunter likes terraforming, especially when it involves hurling asteroids at Mars. He also has a hunch that it's going to pay off. His company CrediCor has all the resources he needs to jump right into the contest."
+, "id": 101
+}
+, {"Name": "Ecoline"
+,"resources": {
+        "money": 36
+        , "plantProduction": 2
+        , "plants": 3
+    }
+, "effects": {
+        "discounts": {
+            "greenery": 1
+        }
+    }
+, "tags": {
+        "plant": 1
+    }
+, "flavorText": "Having developed a fast-growing lichen suitable for early terraforming, this corporation's ambition is to lead the taming of the planets, despite its relatively small size."
+, "id": 102
+}
+, {"Name": "Inventrix"
+,"resources": {
+        "money": 45
+    , "cards": 3
+    , "actions": -1
+    }
+, "effects": {
+        "discounts": {
+            "requirements": 2
+        }
+    }
+, "tags": {
+        "science": 1
+    }
+, "flavorText": "Inventrix uses brains, as well as muscle, when competing with other mega-corps. Its motto being: 'Do it right', Inventrix is focused on research."
+, "id": 103
+}
+, {"Name": "UNMI"
+,"resources": {
+        "money": 40
+    }
+, "effects": {
+      "conditional": {
+        "if": "TR +1 this Generation"
+        , "than": "3$ for TR+1"
+      }
+  }
+, "tags": {
+        "earth": 1
+    }
+, "flavorText": "UNMI is the organization carrying out the World Government's own terraforming projects. After the terraforming announcement, the UNMI got competition from different corporations, but is still a major force behind Mars' development."
+, "id": 104
+}
+, {"Name": "PhoboLog"
+,"resources": {
+    "money": 23
+    , "titanium": 10
+  }
+, "effects": {
+    "benefits": {
+      "titaniumValue": 1
+    }
+  }
+, "tags": {
+    "space": 1
+  }
+, "flavorText": "Aiming to be the leader in space solutions for the Mars era, PhoboLog acquired several national space programs. This allowed them access to much existing infrastructure and technology, and they are not going to let that advantage be wasted."
+
+, "id": 105
+}
+, {"Name": "Tharsis Republic"
+,"resources": {
+    "money": 40
+  , "city": 1
+  , "actions": -1
+  }
+, "effects": {
+    "conditional": {
+      "if": "city is built"
+        , "and": "you own that city"
+        , "then": "money + 3"
+      , "at least": "moneyProduction + 1"
+    }
+  }
+, "tags": {
+    "building": 1
+  }
+, "flavorText": "With the first big city came a social community that could not be controlled by the corporations. Determined to have an elected leader, workers and staff from all corporations formed Tharsis Republic."
+, "id": 106
+}
+, {"Name": "Saturn Systems"
+,"resources": {
+    "money": 42
+  , "titaniumProduction": 1
+  }
+, "effects": {
+    "conditional": {
+      "if": "jovian tag is built"
+    , "then": "moneyProduction + 1"
+    }
+  }
+, "tags": {
+    "jovian": 1
+  }
+, "flavorText": "Having acquired the mining rights on several of Saturn's moons, Saturn Systems gained plenty of experience over the years. As a supplier of rare metals, space ships, and fuel, the company has made itself indispensable to the outer planets. Saturn Systems is now ready to play a key role in teh terraforming of Mars."
+, "id": 107
+}
+, {"Name": "Helion"
+,"resources": {
+    "money": 42
+  , "heatProduction": 3
+  }
+, "effects": {
+    "ruleChange": "heat can be money"
+  }
+, "tags": {
+    "space": 1
+  }
+, "flavorText": "Developers of ultra-light solar sails, Helion now turns to the terraforming of Mars and other worlds. It promises to be a rewarding business, as Helion has alread made a working model of a soletta, focusing sunlight down to the frozen planet."
+, "id": 108
+}
+]

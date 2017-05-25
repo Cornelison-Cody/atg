@@ -1,0 +1,38 @@
+[
+    {
+        "id": 53,
+        "name": "Lake Marineris",
+        "cost": 18,
+        "requirements": {
+            "temperatureGreater": 0
+        },
+        "tags": {  },
+        "points": 2,
+        "effects": {
+            "map": {
+                "ocean": 2
+            }
+        },
+        "flavorText": "Filling the Valles Marineris takes a lot of water."
+    },
+    {
+        "id": 33,
+        "name": "Regolith Eaters",
+        "cost": 13,
+        "requirements": {  },
+        "tags": {
+            "science": 1,
+            "microbe": 1
+        },
+        "points": 0,
+        "usedGenerational": false,
+        "microbes": 0,
+        "effects": {
+            "generational": {
+                "addMicrobe": 1,
+                "increaseOxygen": 1 //-2 microbes
+            }
+        },
+        "flavorText": "Living on the rocks and excreting oxygen."
+    }
+]

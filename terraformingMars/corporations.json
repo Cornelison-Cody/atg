@@ -1,4 +1,4 @@
-[{"Name": "Teractor"
+[{"name": "Teractor"
 ,"resources": {
         "money": 60
     }
@@ -13,7 +13,7 @@
 , "flavorText": "Influence enough to control entire nations, and an army of lawyers and businessmen, has taken Teractor all the way to the top. And now the sky is calling. The strongest corporation on Earth wants to dominate space too..."
 , "id": 100
 }
-, {"Name": "CrediCor"
+, {"name": "CrediCor"
 ,"resources": {
         "money": 57
     }
@@ -27,7 +27,7 @@
 , "flavorText": "Multibillionaire Bard Hunter likes terraforming, especially when it involves hurling asteroids at Mars. He also has a hunch that it's going to pay off. His company CrediCor has all the resources he needs to jump right into the contest."
 , "id": 101
 }
-, {"Name": "Ecoline"
+, {"name": "Ecoline"
 ,"resources": {
         "money": 36
         , "plantProduction": 2
@@ -44,7 +44,7 @@
 , "flavorText": "Having developed a fast-growing lichen suitable for early terraforming, this corporation's ambition is to lead the taming of the planets, despite its relatively small size."
 , "id": 102
 }
-, {"Name": "Inventrix"
+, {"name": "Inventrix"
 ,"resources": {
         "money": 45
     , "cards": 3
@@ -61,7 +61,7 @@
 , "flavorText": "Inventrix uses brains, as well as muscle, when competing with other mega-corps. Its motto being: 'Do it right', Inventrix is focused on research."
 , "id": 103
 }
-, {"Name": "UNMI"
+, {"name": "UNMI"
 ,"resources": {
         "money": 40
     }
@@ -77,7 +77,7 @@
 , "flavorText": "UNMI is the organization carrying out the World Government's own terraforming projects. After the terraforming announcement, the UNMI got competition from different corporations, but is still a major force behind Mars' development."
 , "id": 104
 }
-, {"Name": "PhoboLog"
+, {"name": "PhoboLog"
 ,"resources": {
     "money": 23
     , "titanium": 10
@@ -94,7 +94,7 @@
 
 , "id": 105
 }
-, {"Name": "Tharsis Republic"
+, {"name": "Tharsis Republic"
 ,"resources": {
     "money": 40
   , "city": 1
@@ -114,7 +114,7 @@
 , "flavorText": "With the first big city came a social community that could not be controlled by the corporations. Determined to have an elected leader, workers and staff from all corporations formed Tharsis Republic."
 , "id": 106
 }
-, {"Name": "Saturn Systems"
+, {"name": "Saturn Systems"
 ,"resources": {
     "money": 42
   , "titaniumProduction": 1
@@ -131,7 +131,7 @@
 , "flavorText": "Having acquired the mining rights on several of Saturn's moons, Saturn Systems gained plenty of experience over the years. As a supplier of rare metals, space ships, and fuel, the company has made itself indispensable to the outer planets. Saturn Systems is now ready to play a key role in teh terraforming of Mars."
 , "id": 107
 }
-, {"Name": "Helion"
+, {"name": "Helion"
 ,"resources": {
     "money": 42
   , "heatProduction": 3
@@ -144,5 +144,56 @@
   }
 , "flavorText": "Developers of ultra-light solar sails, Helion now turns to the terraforming of Mars and other worlds. It promises to be a rewarding business, as Helion has alread made a working model of a soletta, focusing sunlight down to the frozen planet."
 , "id": 108
+}
+ , {"name": "Interplanetary Cinematics"
+,"resources": {
+    "steel": 20
+  , "money": 30
+  }
+, "effects": {
+   "conditional": {
+      "if": "everytime you play an event card"
+    , "then": "money + 2"
+    }
+}
+, "tags": {
+    "building": 1
+  }
+, "flavorText": "Finding funding where nations struggled, IC initaiated the colonization of Mars by turning the process into a soap opera infused with plnty of advertising. With the media's attention and a head start in colonization, IC sets out to terraform."
+, "id": 109
+}
+ , {"name": "Thorgate"
+,"resources": {
+    "energyProduction": 1
+  , "money": 48
+  }
+, "effects": {
+   "discounts": {
+            "powerTag": 3    // ****** NEED STANDARD PROJECT POWER PLANT RULE
+        }
+}
+, "tags": {
+    "power": 1
+  }
+, "flavorText": "As oil reserves ran out on earth, Nordic ThorGate emerged as the new world leader in the energy field, with their cutting edge technology. Now that the colonies on Mars are growing, ThorGate leads the way in fingin viabloe energy solutions."
+, "id": 110
+}
+ , {"name": "Mining Guild"
+,"resources": {
+    "steelProduction": 1
+  , "steel": 5
+    , "money": 30
+  }
+, "effects": {
+    "conditional": {
+      "if": "each time you get any steel or titanium as a placement bonus on the map",
+      "then": "steel production + 1"
+    }
+  }
+, "tags": {
+    "building": 2
+  }
+, "flavorText": "The earliest private enterprises on Mars focused on mining and exporting minerals off the surface. As the mega-corporations arrive to terraform, the miners unite in the Guild to defend their interests. With their expertise and knowledge of the planet they will be a worthy contender in the race."
+, "id": 111
 }
 ]

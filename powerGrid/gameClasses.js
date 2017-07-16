@@ -102,12 +102,45 @@ function game (settings) { // Settings.map and Settings.deck
 
     };
 
-    this.payResource = function (player, resourceType, quantity) {
+    this.resourceCost = function (resourceType) {
+        var rCost = 0;
 
+        if (resourceType < 3) {
+            rCost = 8 - Math.floor(this.resources[resourceType] / 3);
+        } else {
+            if (this.resources[resourceType] <= 4) {
+                rCost = 18 - this.resources[resourceType] * 2;
+            }
+            else {
+                rCost = 13 - this.resources[resourceType];
+            }
+        }
+
+        return rCost;
+    };
+
+    this.payResource = function (player, resourceType, quantity) {
+        while (quantity > 0) {
+            if (this.playerList[player].money >= this.resourceCost(resourceType)) {
+                this.playerList[player].money -= this.resourceCost(resourceType);
+                quantity -= 1;
+            }
+            else {
+                return false;
+            }
+        }
+        return true;
     };
 
     this.addResource = function (player, resourceType, quantity) {
-        this.playerList[player].resources[resourceType] += quantity;
+        if (this.resources[resourceType] >= quantity) {
+            this.resources[resourceType] -= quantity;
+            this.playerList[player].resources[resourceType] += quantity;
+            return true;
+        }
+        else {
+            return false;
+        }
     };
 
     this.buyCitiesPhase = function () {
@@ -122,12 +155,12 @@ function game (settings) { // Settings.map and Settings.deck
         for (var player in this.playerList) {
             this.playerOrder[player] = this.playerList[player];
         }
-        for (var player in this.playerOrder) {
-            if (this.playerOrder[player].cities > this.playerOrder[(player + 1) % this.playerOrder.length].cities) {
-                this.playerOrder.swap(player, (player + 1) % this.playerOrder.length);
-            } else if (this.playerOrder[player].cities == this.playerOrder[(player + 1) % this.playerOrder.length].cities) {
-                if (this.playerOrder[player].largestPlant > this.playerOrder[(player + 1) % this.playerOrder.length].largestPlant) {
-                    this.playerOrder.swap(player, (player + 1) % this.playerOrder.length);
+        for (var player = 0; player < this.playerOrder.length -1; ++player) {
+            if (this.playerOrder[player].cities > this.playerOrder[player + 1].cities) {
+                this.playerOrder.swap(player, (player + 1));
+            } else if (this.playerOrder[player].cities == this.playerOrder[player + 1].cities) {
+                if (this.playerOrder[player].largestPlant > this.playerOrder[player + 1].largestPlant) {
+                    this.playerOrder.swap(player, (player + 1));
                 }
             }
         }

@@ -1,0 +1,235 @@
+// **************************** RESOURCES *************************************
+//  Coal -> 0, Oil -> 1, Garbage -> 2, Uranium -> 3, Coil/Oil -> 4, Green -> 5
+// ****************************************************************************
+[{
+  "number": 1
+, "resourceType": 0
+, "resourceCount": 3
+, "cityCount": 1
+}, {
+  "number": 2
+, "resourceType": 1
+, "resourceCount": 2
+, "cityCount": 1
+}, {
+  "number": 3
+, "resourceType": 0
+, "resourceCount": 1
+, "cityCount": 1
+}, {
+  "number": 4
+, "resourceType": 4
+, "resourceCount": 1
+, "cityCount": 1
+}, {
+  "number": 5
+, "resourceType": 4
+, "resourceCount": 3
+, "cityCount": 3
+}, {
+  "number": 6
+, "resourceType": 2
+, "resourceCount": 1
+, "cityCount": 2
+}, {
+  "number": 7
+, "resourceType": 1
+, "resourceCount": 2
+, "cityCount": 2
+}, {
+  "number": 8
+, "resourceType": 3
+, "resourceCount": 1
+, "cityCount": 2
+}, {
+  "number": 9
+, "resourceType": 0
+, "resourceCount": 3
+, "cityCount": 3
+}, {
+  "number": 10
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 1
+}, {
+  "number": 11
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 1
+}, {
+  "number": 12
+, "resourceType": 1
+, "resourceCount": 1
+, "cityCount": 2
+}, {
+  "number": 13
+, "resourceType": 4
+, "resourceCount": 1
+, "cityCount": 2
+}, {
+  "number": 14
+, "resourceType": 0
+, "resourceCount": 3
+, "cityCount": 4
+}, {
+  "number": 15
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 2
+}, {
+  "number": 16
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 2
+}, {
+  "number": 19
+, "resourceType": 3
+, "resourceCount": 1
+, "cityCount": 3
+}, {
+  "number": 20
+, "resourceType": 1
+, "resourceCount": 1
+, "cityCount": 3
+}, {
+  "number": 21
+, "resourceType": 2
+, "resourceCount": 3
+, "cityCount": 5
+}, {
+  "number": 22
+, "resourceType": 1
+, "resourceCount": 2
+, "cityCount": 4
+}, {
+  "number": 23
+, "resourceType":0
+, "resourceCount": 2
+, "cityCount": 4
+}, {
+  "number": 24
+, "resourceType": 3
+, "resourceCount": 1
+, "cityCount": 4
+}, {
+  "number": 25
+, "resourceType": 1
+, "resourceCount": 3
+, "cityCount": 5
+}, {
+  "number": 26
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 3
+}, {
+  "number": 27
+, "resourceType": 2
+, "resourceCount": 1
+, "cityCount": 4
+}, {
+  "number": 28
+, "resourceType": 0
+, "resourceCount": 3
+, "cityCount": 5
+}, {
+  "number": 29
+, "resourceType": 4
+, "resourceCount": 3
+, "cityCount": 5
+}, {
+  "number": 30
+, "resourceType": 0
+, "resourceCount": 1
+, "cityCount": 4
+}, {
+  "number": 31
+, "resourceType": 3
+, "resourceCount": 1
+, "cityCount": 5
+}, {
+  "number": 32
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 4
+}, {
+  "number": 33
+, "resourceType": 2
+, "resourceCount": 2
+, "cityCount": 5
+}, {
+  "number": 34
+, "resourceType": 0
+, "resourceCount": 3
+, "cityCount": 6
+}, {
+  "number": 35
+, "resourceType": 0
+, "resourceCount": 1
+, "cityCount": 5
+}, {
+  "number": 36
+, "resourceType": 4
+, "resourceCount": 2
+, "cityCount": 6
+}, {
+  "number": 37
+, "resourceType": 1
+, "resourceCount": 3
+, "cityCount": 7
+}, {
+  "number": 38
+, "resourceType": 3
+, "resourceCount": 1
+, "cityCount": 6
+}, {
+  "number": 39
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 5
+}, {
+  "number": 40
+, "resourceType": 1
+, "resourceCount": 1
+, "cityCount": 6
+}, {
+  "number": 42
+, "resourceType": 2
+, "resourceCount": 2
+, "cityCount": 7
+}, {
+  "number": 44
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 6
+}, {
+  "number": 46
+, "resourceType": 0
+, "resourceCount": 2
+, "cityCount": 7
+}, {
+  "number": 50
+, "resourceType": 3
+, "resourceCount": 2
+, "cityCount": 8
+}, {
+  "number": 52
+, "resourceType": 2
+, "resourceCount": 3
+, "cityCount": 8
+}, {
+  "number": 54
+, "resourceType": 1
+, "resourceCount": 2
+, "cityCount": 8
+}, {
+  "number": 57
+, "resourceType": 1
+, "resourceCount": 3
+, "cityCount": 9
+}, {
+  "number": 60
+, "resourceType": 5
+, "resourceCount": 0
+, "cityCount": 8
+}, {
+} ]
